@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+* {
+  font-family: "Cabin", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to left, #ffd700, #ffa500);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav {
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: yellow;
+  transform: scale(1.1);
+}
+
+img {
+  width: 140px;
+  height: auto;
+}
+
+/* Main Page Button */
+.main-page-btn {
+  align-self: flex-end;
+  margin-top: auto;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  background: linear-gradient(#ffa500, #ffd700);
+  color: #fff;
+  border-radius: 25px;
+  border: 2px solid #ffa500;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-page-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  z-index: -1;
+  transition: transform 0.5s ease;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.main-page-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.main-page-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination select,
+.pagination button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #262022;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+}
+
+.pagination select {
+  margin-right: 10px;
+}
+
+.pagination button:hover {
+  background: linear-gradient(#ffd700, #ffa500);
+}
+
+#beer-list {
+  margin-top: 20px;
+}
+
+/* Beer Table */
+.beer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+.beer-table th,
+.beer-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.beer-table th {
+  background-color: #f2f2f2;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.beer-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.beer-table tbody tr:hover {
+  background: linear-gradient(#ffd700, #ffa500);
+}
+
+/* Search input */
+#search-input {
+  padding: 8px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border: 2px solid #ffa500;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 200px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#search-input:focus {
+  border-color: #ffd700;
+}
+
+/* Media queries for responsive design */
+
+/* Mobile phones */
+@media (max-width: 767px) {
+  header {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  .main-page-link {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .pagination select,
+  .pagination button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  #search-input {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  header {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  img {
+    width: 120px;
+  }
+
+  .main-page-link {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .pagination select,
+  .pagination button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  #search-input {
+    width: 250px;
+  }
+}
+
+/* Desktop PCs */
+@media (min-width: 1024px) {
+  header {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  img {
+    width: 140px;
+  }
+
+  .main-page-link {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+
+  .pagination select,
+  .pagination button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  #search-input {
+    width: 200px;
+  }
+}
+
+/* Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #262022;
+  padding: 20px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 20px; /* Adjust the margin-top as needed */
+  min-height: 100px; /* Set a minimum height for the footer */
+}
+
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+footer nav ul li {
+  margin-right: 20px;
+}
+
+footer nav ul li a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  color: yellow;
+}
+
+footer p {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Style the label for the checkbox */
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.checkbox-wrapper {
+  margin-top: 10px;
+}
+
+label {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* Style the checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffa500;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* Style the checked state of the checkbox */
+input[type="checkbox"]:checked {
+  background: linear-gradient(#ffd700, #ffa500);
+}
+
+/* Style the checkmark inside the checkbox */
+input[type="checkbox"]::after {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: white;
+  display: none;
+}
+
+/* Show the checkmark when the checkbox is checked */
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+/* Error Message */
+#error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}

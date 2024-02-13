@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+* {
+  font-family: "Cabin", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to left, #ffd700, #ffa500);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav {
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: yellow;
+  transform: scale(1.1);
+}
+
+img {
+  width: 140px;
+  height: auto;
+}
+
+/* Beer display */
+#beer-display {
+  background-color: #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+#beer-info {
+  text-align: center;
+}
+
+/* Beer image */
+
+#beer-image {
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+#beer-image:hover {
+  transform: scale(1.1);
+}
+
+/* Beer details */
+#beer-name {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#beer-ABV,
+#beer-IBU,
+#beer-EBC {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Beer description */
+#beer-description {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: pre-line;
+}
+
+/* Beer controls */
+.beer-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Regenerate Button */
+#regenerate-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  background: linear-gradient(#ffa500, #ffd700);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 15px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#regenerate-btn:hover {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* View Menu Button */
+.view-menu-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  background: linear-gradient(#ffa500, #ffd700);
+  color: white;
+  border-radius: 25px;
+  border: 2px solid #ffa500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-menu-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  z-index: -1;
+  transition: transform 0.5s ease;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.view-menu-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.view-menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #262022;
+  padding: 20px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 20px;
+  min-height: 100px;
+}
+
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+footer nav ul li {
+  margin-right: 20px;
+}
+
+footer nav ul li a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  color: yellow;
+}
+
+footer p {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 20px;
+  }
+
+  nav a {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Adjust beer image size */
+  #beer-image {
+    max-width: 100px;
+  }
+
+  /* Adjust beer name font size */
+  #beer-name {
+    font-size: 20px;
+  }
+
+  /* Adjust beer ABV and description font size */
+  #beer-ABV,
+  #beer-IBU,
+  #beer-EBC,
+  #beer-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  nav {
+    font-size: 16px;
+  }
+
+  .view-menu-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  footer p {
+    font-size: 10px;
+  }
+
+  /* Further adjust beer image size */
+  #beer-image {
+    max-width: 80px;
+  }
+
+  /* Further adjust beer name font size */
+  #beer-name {
+    font-size: 18px;
+  }
+
+  /* Further adjust beer ABV and description font size */
+  #beer-ABV,
+  #beer-IBU,
+  #beer-EBC,
+  #beer-description {
+    font-size: 12px;
+  }
+}
+
+/* Styling for beer links */
+.beer-link {
+  color: #007bff;
+}
+
+.beer-link:hover {
+  text-decoration: underline;
+}

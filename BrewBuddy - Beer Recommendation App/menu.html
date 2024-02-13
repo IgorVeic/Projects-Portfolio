@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="menu.css" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="./photos/favicon-32x32.png" />
+    <title>BrewBuddy Menu</title>
+  </head>
+  <body>
+    <header>
+      <img src="photos/logo-beer.png" alt="Beer Image" />
+      <h1>🍻 BrewBuddy Menu 🍻</h1>
+      <a target="_blank" href="index.html" class="main-page-btn"
+        >🍺 MAIN PAGE 🍺</a
+      >
+    </header>
+    <main>
+      <div class="checkbox-container">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search beers by name..."
+        />
+        <label>
+          <input type="checkbox" id="abv-filter" /> Show beers with ABV over 6%
+        </label>
+        <label>
+          <input type="checkbox" id="ebc-filter" /> Show beers with EBC over 100
+        </label>
+        <label>
+          <input type="checkbox" id="ibu-filter" /> Show beers with IBU over 85
+        </label>
+      </div>
+
+      <div class="pagination">
+        <label for="page-size">Page Size:</label>
+        <select id="page-size">
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+        </select>
+        <button id="prev-page">Previous</button>
+        <span id="current-page">Page 1</span>
+        <button id="next-page">Next</button>
+      </div>
+
+      <div id="beer-list"></div>
+    </main>
+    <footer>
+      <img src="./photos/37-beer-png-image.png" alt="Beer 1" />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Press kit</a></li>
+          <li><a href="#">Sponsorship</a></li>
+        </ul>
+      </nav>
+      <img src="./photos/Drink-Beer-icon.png" alt="Beer 2" />
+      <p>© BrewBuddy 2024</p>
+    </footer>
+    <script src="menu.js"></script>
+  </body>
+</html>
