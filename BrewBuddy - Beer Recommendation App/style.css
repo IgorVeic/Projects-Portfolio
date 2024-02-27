@@ -8,8 +8,21 @@
   margin: 0;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main {
+  flex: 1;
+}
+
 /* Header */
 header {
+  height: 80px;
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
